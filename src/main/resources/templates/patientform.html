@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:background-color="http://www.w3.org/1999/xhtml"
+      xmlns:background-image="http://www.w3.org/1999/xhtml">
+<head>
+    <link rel="stylesheet" type="text/css" href="mystyle.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+    </style>
+    <meta charset="UTF-8">
+    <title>Patient Registration Form</title>
+</head>
+<body>
+<!--style="background-color:#CFD8DC;"-->
+
+<div class="jumbotron" >
+    <h1>Patient Registration Form</h1>
+</div>
+
+
+
+<div class = "container">
+<form action="#" th:action="@{/process}" th:object="${patient}" method = "post">
+    <input type ="hidden" th:field="*{id}" />
+
+    <p class="text-center">Name: <input type ="text" th:field="*{name}"/>
+    <span th:if="${#fields.hasErrors('name')}"
+          th:errors="*{name}"></span><br/>
+    Age: <input type ="text" th:field="*{age}"/>
+    <span th:if="${#fields.hasErrors('age')}"
+          th:errors="*{age}"></span><br/>
+    Birthday: <input type ="text" th:field="*{birthday}"/>
+    <span th:if="${#fields.hasErrors('birthday')}"
+          th:errors="*{birthday}"></span><br/>
+    Address: <input type ="text" th:field="*{address}"/>
+    <span th:if="${#fields.hasErrors('address')}"
+          th:errors="*{address}"></span><br/>
+    Medical History: <input type ="text" th:field="*{medicalHistory}"/>
+    <span th:if="${#fields.hasErrors('medicalHistory')}"
+          th:errors="*{medicalHistory}"></span><br/>
+    Prescription: <input type ="text" th:field="*{rx}"/>
+    <span th:if="${#fields.hasErrors('rx')}"
+          th:errors="*{rx}"></span><br/>
+
+
+
+    <br />
+
+
+        <p class ="text-center">
+<!--        <button type ="submit" value = "Submit" class = "btn">Submit</button>-->
+    <input type="submit" value = "Submit" />
+</p>
+</div>
+
+
+</form>
+
+</body>
+</html>

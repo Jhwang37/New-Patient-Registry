@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+
+    <link rel="stylesheet" type="text/css" href="mystyle.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link href="../assets/css/bootstrap.css" rel="stylesheet">
+    <link href="../assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>Show Patient Information</title>
+</head>
+<body>
+<div class="jumbotron text-center">
+    <h1>Patient Information</h1>
+</div>
+
+<a href="/">Show Patient Information</a><br />
+<table class="table">
+    Name: <span th:text="${patient.name}" ></span><br/>
+    Age: <span th:text="${patient.age}" ></span><br/>
+    Birthday: <span th:text="${patient.birthday}" ></span><br/>
+    Address: <span th:text="${patient.address}" ></span><br/>
+    Medical History: <span th:text="${patient.medicalHistory}" ></span><br/>
+    Prescriptions: <span th:text="${patient.rx}" ></span><br/>
+</table>
+
+<td>
+    <a th:href="@{/update/{id}(id=${patient.id})}">Update</a>-
+    <a th:href="@{/detail/{id}(id=${patient.id})}">Details</a>-
+    <a th:href="@{/delete/{id}(id=${patient.id})}">Delete</a>
+</td>
+
+</body>
+</html>

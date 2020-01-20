@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" type="text/css" href="mystyle.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <meta charset="UTF-8">
+    <title>Patient Register Show</title>
+</head>
+<body>
+<div class="jumbotron text-center">
+    <h1>My First Bootstrap Page</h1>
+    <p>Resize this responsive page to see the effect!</p>
+</div>
+<h1> Patient Information</h1>
+<a href="/add">Add another patient</a><br />
+
+<th>Name </th>
+<th>Age</th>
+<th>Birthday</th>
+<th>Address</th>
+<th>Medical History</th>
+<th>Prescription</th>
+
+ <tr th:each="patient : ${patients}">
+    <td th:text=""${patient.name}></td>
+    <td th:text=""${patient.age}></td>
+    <td th:text=""${patient.birthday}></td>
+    <td th:text=""${patient.address}></td>
+    <td th:text=""${patient.medicalHistoy}></td>
+    <td th:text=""${patient.rx}></td>
+ </tr>
+
+
+
+
+
+</body>
+</html>
